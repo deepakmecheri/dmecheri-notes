@@ -4,7 +4,6 @@
 ## Chapter 1 - Systems of Linear Equations: Algebra	
 
 Systems of linear equations can be easily represented using matrices whose elements are the coefficients of the equations.
-
 $$
 \left\{ 
 \begin{align*}
