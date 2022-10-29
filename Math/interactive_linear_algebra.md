@@ -42,7 +42,7 @@ We could say that any augmented matrix modified through above mentioned meaningf
 
 Example of matrix in row echelon form:
 
-$$
+```math
 \left(
 \begin{matrix}
 \star & \star & \star & \star & \star & \star \\
@@ -51,7 +51,7 @@ $$
 0 & 0 & 0 & 0 & 0 & 0  \\
 \end{matrix}
 \right)
-$$
+```
 
 A matrix in row echelon form is generally easily solvable through back substitution.
 
