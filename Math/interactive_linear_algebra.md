@@ -30,6 +30,7 @@ x + 2y + 3z &=6 \\
   \right.
 \right]
 $$
+
 This is called an **augmented matrix**
 
 > **Remark**: Replacing one equation in the system of equations with a linear combination of the equation along with the other equations will not change the solution set
@@ -62,6 +63,7 @@ A matrix in row echelon form is generally easily solvable through back substitut
 > - Each pivot is the only nonzero entry in its column
 
 Example of reduced row echelon form:
+
 $$
 \left(
 \begin{matrix}
@@ -80,6 +82,7 @@ An RRE matrix is in some sense at the extreme of simplified representation. If a
 >**Intuition**: [**Double check this**] Wouldn't the row echelon forms that are possible to generate from a matrix be the same except for the fact that the rows may be scaled differently (In the end they will definitely produce same solution set!). So if you are normalising the pivots to 1, this will make sure that the RRE matrix for a set of equations will be unique.
 
 The RRE matrix for an inconsistent system (no solutions) will have it's last column as a pivot column. 
+
 $$
 \left[
   \begin{matrix}
@@ -103,6 +106,7 @@ If you think about it, it's the only way to get nonsense out of an RRE matrix. A
 ### Parametric Form
 
 Let's try solving the system of equations given by
+
 $$
 \left\{ 
 \begin{align*}
@@ -113,6 +117,7 @@ x + 2y + 9z &=-1
 $$
 
 The RRE matrix will come out to be
+
 $$
 \left[
   \begin{matrix}
@@ -132,6 +137,7 @@ $$
 Notice how the column corresponding to $z$ is not a pivot column. It means there is no way to determine $z$ in reference to anything. $z$ is essentially free to assume whatever value. The other variables are bound by some rules but $z$ if a ***free variable***.
 
 The solved system will look like this
+
 $$
 \left\{ 
 \begin{align*}
@@ -141,6 +147,7 @@ z &= z
 \end{align*}
 \right.
 $$
+
 or more succinctly expressed as $(1-5z, -1-2z, z)$
 
 You could take a look at the parametric representation of the solution set to get an idea about the solution set. For the above example there is a single free variable which implies the solution set will be a line. If there were two free variables it would've been a plane and no free variables would lead to a single point.
@@ -202,6 +209,7 @@ Here when we rewrite the system of linear equations into a vector equation we ar
 #### Three Characterizations of Consistency  
 We now have three distinct (yet equivalent!) ways of representing a linear system.
 1. As a system of equations:
+
 $$
 \left\{
 \begin{align*}
@@ -210,7 +218,9 @@ x_1-x_2-3x_3&=5
 \end{align*}
 \right.
 $$ 
+
 2. As an augmented matrix:
+
 $$
 \left[
   \begin{matrix}
@@ -226,7 +236,9 @@ $$
   \right.
 \right]
 $$
+
 3. As a vector equation
+
 $$
 x_1\begin{pmatrix}2\\1\end{pmatrix} +
 x_2\begin{pmatrix}3\\-1\end{pmatrix} +
@@ -242,6 +254,7 @@ Now we have three ways of stating that a linear system is consistent.
 1. The vector $b$ is in the span of $v_1,v_2,\dots,v_k$.
 2. The vector equation $$x_1v_1+x_2v_2+\dots+x_kv_k=b$$ has a solution
 3. The augmented matrix is consistent.
+
 $$
 \left(
   \begin{matrix}
@@ -263,6 +276,7 @@ $$
 ### 2.3 Matrix Equations
 
 The product of an $m \times n$ matrix $A$ with a vector $x$ in $\mathbb{R}^{n}$ is defined as
+
 $$
 Ax =
 \left(
