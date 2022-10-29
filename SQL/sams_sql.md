@@ -141,3 +141,15 @@ select *
 from orderitems
 order by quantity desc, item_price desc;
 ```
+
+# Lesson 4. Filtering Data
+
+Within a `SELECT` statement, data is filtered using the `WHERE` clause. The `WHERE` clause is specified right after the table name (`FROM` clause).
+
+```sql
+SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price = 3.49;
+```
+
+> Note: While using `ORDER BY` and `WHERE` clauses together, make sure `ORDER BY` comes after `WHERE`.
