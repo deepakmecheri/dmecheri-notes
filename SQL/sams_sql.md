@@ -58,6 +58,7 @@ WHERE ROWNUM <=5;
 ```
 ## Challenges
 **Q**.  Write a SQL statement to retrieve all customer IDs (`cust_id`) from the  `Customers`  table.
+
 **Ans**: 
 ```sql
 select cust_id
@@ -65,12 +66,14 @@ from customers;
 ```
 
 **Q**. The  `OrderItems`  table contains every item ordered (and some were ordered multiple times). Write a SQL statement to retrieve a list of the products (`prod_id`) ordered (not every order, just a unique list of products). Here’s a hint: you should end up with seven unique rows displayed.
+
 **Ans**:
 ```sql
 select distinct prod_id
 from orderitems;
 ```
 **Q**. Write a SQL statement that retrieves all columns from the  `Customers`  table and an alternate  `SELECT`  that retrieves just the customer ID. Use comments to comment out one  `SELECT`  so as to be able to run the other. (And, of course, test both statements.)
+
 **Ans**:
 ```sql
 select *
@@ -119,6 +122,7 @@ ORDER BY prod_price DESC, prod_name;
 ## Challenges
 
 **Q**. Write a SQL statement to retrieve all customer names (`cust_names`) from the  `Customers`  table, and display the results sorted from  `Z`  to  `A`.
+
 **Ans**:
 ```sql
 select cust_name
@@ -127,6 +131,7 @@ order by cust_name desc;
 ```
 
 **Q**. Write a SQL statement to retrieve customer ID (`cust_id`) and order number (`order_num`) from the  `Orders`  table, and sort the results first by customer ID and then by order date in reverse chronological order.
+
 **Ans**:
 ```sql
 select cust_id, order_num
@@ -135,6 +140,7 @@ order by cust_id, order_date;
 ```
 
 **Q**. Our fictitious store obviously prefers to sell more expensive items, and lots of them. Write a SQL statement to display the quantity and price (`item_price`) from the  `OrderItems`  table, sorted with the highest quantity and highest price first.
+
 **Ans**:
 ```sql
 select * 
@@ -151,5 +157,56 @@ SELECT prod_name, prod_price
 FROM Products
 WHERE prod_price = 3.49;
 ```
+```sql
+SELECT prod_name, prod_price
+FROM products
+WHERE prod_price BETWEEN 5 AND 10;
+```
 
 > Note: While using `ORDER BY` and `WHERE` clauses together, make sure `ORDER BY` comes after `WHERE`.
+
+When a table is created the default values of columns will be `NULL`. We can query these `NULL` columns using `IS NULL`.
+```sql
+SELECT prod_name
+FROM Products
+WHERE prod_price IS NULL;
+```
+
+## Challenges
+**Q**. Write a SQL statement to retrieve the product ID (`prod_id`) and name (`prod_name`) from the `Products` table, returning only products with a price of `9.49`.
+
+**Ans**. 
+```sql
+SELECT prod_id, prod_name
+FROM products
+WHERE prod_price = 9.49;
+```
+
+**Q**. Write a SQL statement to retrieve the product ID (`prod_id`) and name (`prod_name`) from the Products table, returning only products with a price of `9` or more.
+
+**Ans**.
+```sql
+SELECT prod_id, prod_name
+FROM products
+WHERE prod_price >= 9;
+```
+
+**Q**. Write a SQL statement that retrieves the unique list of order numbers (`order_num`) from the `OrderItems` table, which contain `100` or more of any item.
+
+**Ans**.
+```sql
+SELECT DISTINCT order_num
+FROM orderitems
+WHERE quantity >= 100;
+```
+
+**Q**. Write a SQL statement that returns the product name (`prod_name`) and price (`prod_price`) from `Products` for all products priced between `3` and `6`. Oh, and sort the results by price. 
+
+**Ans**.
+```sql
+SELECT prod_name, prod_price 
+FROM products
+WHERE prod_price BETWEEN 3 AND 6
+ORDER BY prod_price;
+```
+
