@@ -5,7 +5,7 @@
 
 Systems of linear equations can be easily represented using matrices whose elements are the coefficients of the equations.
 
-$$
+```math
 \left\{ 
 \begin{align*}
 x + 2y + 3z &=6 \\
@@ -29,7 +29,7 @@ x + 2y + 3z &=6 \\
     \end{matrix}
   \right.
 \right]
-$$
+```
 
 This is called an **augmented matrix**
 
