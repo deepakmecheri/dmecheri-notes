@@ -64,7 +64,7 @@ A matrix in row echelon form is generally easily solvable through back substitut
 
 Example of reduced row echelon form:
 
-$$
+```math
 \left(
 \begin{matrix}
 \red{1} & 0 & \star & 0 & \star \\
@@ -73,7 +73,7 @@ $$
 0 & 0 & 0 & 0 & 0  \\
 \end{matrix}
 \right)
-$$
+```
 
 An RRE matrix is in some sense at the extreme of simplified representation. If an augmented matrix is in reduced row echelon form, the corresponding linear system is viewed as _solved_.
 
