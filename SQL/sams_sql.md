@@ -210,3 +210,109 @@ WHERE prod_price BETWEEN 3 AND 6
 ORDER BY prod_price;
 ```
 
+# Lesson 5. Advanced Data Filtering
+
+Use `AND` and `OR` to combine logical conditions
+
+```sql
+SELECT prod_id, prod_price, prod_name
+FROM Products
+WHERE vend_id = 'DLL01' AND prod_price <= 4;
+```
+```sql
+SELECT prod_id, prod_price, prod_name
+FROM Products
+WHERE vend_id = 'DLL01' OR vend_id = 'BRS01';
+```
+
+SQL (like most languages) will evaluate `AND`s before `OR`s. Make sure to add parentheses in your expressions to make the order of evaluation explicit.
+```sql
+SELECT prod_name, prod_price
+FROM Products
+WHERE (vend_id = 'DLL01' OR vend_id = 'BRS01')
+      AND prod_price >= 10;
+```
+
+The `IN` operator can be used to specify a range of conditions, any of which can be matched.
+```sql
+SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id  IN ('DLL01','BRS01')
+ORDER BY prod_name;
+```
+
+The `NOT` operator when used will negate any condition that it precedes.
+```sql
+SELECT prod_name
+FROM Products
+WHERE NOT vend_id = 'DLL01'
+ORDER BY prod_name;
+```
+
+## Challenges
+
+**Q**. Write a SQL statement to retrieve the vendor name (`vend_name`) from the `Vendors` table, returning only vendors in California.
+
+**Ans**.
+```sql
+SELECT *
+FROM vendors
+WHERE vend_country = 'USA'
+    AND vend_state = 'CA';
+```
+
+**Q**. Write a SQL statement to find all orders where at least `100` of items `BR01`, `BR02`, or `BR03` were ordered. You’ll want to return order number (`order_num`), product ID (`prod_id`), and quantity for the `OrderItems` table, filtering by both the product ID and quantity.
+
+**Ans**.
+```sql
+SELECT DISTINCT order_num
+FROM orderitems
+WHERE prod_id in ('BR01', 'BR02', 'BR03')
+    AND quantity >= 100;
+```
+
+**Q**. Write a SQL statement that returns the product name (`prod_name`) and price (`prod_price`) from `Products` for all products priced between `3` and `6`. Use an `AND`, and sort the results by price.
+
+**Ans**.
+```sql
+SELECT prod_name, prod_price
+FROM products
+WHERE prod_price >= 3
+    AND prod_price <= 6
+ORDER BY prod_price;
+```
+
+**Q**. What is wrong with the following SQL statement?
+```sql
+SELECT vend_name
+FROM Vendors
+ORDER BY vend_name
+WHERE vend_country = 'USA' AND vend_state = 'CA';
+```
+**Ans**. `ORDER BY` should go after `WHERE`
+
+
+# Lesson 6. Using Wildcard Filtering
+
+Wildcard searches can be made with the help of `LIKE` operator and wildcards. Some of the most commonly used wildcards are
+
+`%` Matches zero or more characters
+
+`_` Matches a single character
+
+`[]` Specify a set of characters, any one of which must match a character in the specified position
+
+```sql
+SELECT cust_contact
+FROM Customers
+WHERE cust_contact LIKE '[JM]%'
+ORDER BY cust_contact;
+```
+
+The `[]` wildcard can be negated using `^` before the characters
+```sql
+SELECT cust_contact
+FROM Customers
+WHERE cust_contact LIKE '[^JM]%'
+ORDER BY cust_contact;
+```
