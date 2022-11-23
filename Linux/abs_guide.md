@@ -105,3 +105,4 @@ Array initialization
 ```bash
 Array=(element1 element2 element3)
 ```
+
