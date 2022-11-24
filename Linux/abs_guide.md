@@ -1,6 +1,6 @@
 [Source](https://linux.die.net/abs-guide/)
 
-# Chapter 3. Special Characters
+## Chapter 3. Special Characters
 
 Lines Beginning with `#` are comments
 ```bash
@@ -377,5 +377,53 @@ Erase backwards till whitespace
 `Ctl-Z`
 
 Pause foreground job
+
+
+## Chapter 4. Introduction to Variables and Parameters
+
+### 4.1. Variable Substitution
+
+```bash
+bash$ variable=23
+
+
+bash$ echo variable
+variable
+
+bash$ echo $variable
+23
+```
+
+Enclosing a referenced value in double quotes (`" "`) does not interfere with variable substitution. This is called partial quoting, sometimes referred to as "weak quoting." Using single quotes (`' '`) causes the variable name to be used literally, and no substitution will take place. This is full quoting, sometimes referred to as "strong quoting."
+
+Note that \$variable is actually a simplified alternate form of \${variable}
+
+```bash
+hello="A B  C   D"
+echo $hello   # A B C D
+echo "$hello" # A B  C   D
+# As you see, echo $hello   and   echo "$hello"   give different results.
+# Why?
+# =======================================
+# Quoting a variable preserves whitespace.
+# =======================================
+```
+
+### 4.2. Variable Assignment
+
+You already know how to do it. Just make sure that there are no spaces before of after `=`
+
+```bash
+# Correct
+a="Hello"
+#Incorrect
+a = "Hello"
+a ="Hello"
+a= "hello"
+```
+
+### 4.3. Bash Variables Are Untyped
+
+As it says. Be an adult while dealing with variables.
 
 
