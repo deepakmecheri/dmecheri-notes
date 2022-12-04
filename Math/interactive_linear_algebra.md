@@ -79,7 +79,7 @@ An RRE matrix is in some sense at the extreme of simplified representation. If a
 
 >**Theorem:** Every matrix is row equivalent to one and only one matrix in reduced row echelon form.
 >
->**Intuition**: [**Double check this**] Wouldn't the row echelon forms that are possible to generate from a matrix be the same except for the fact that the rows may be scaled differently (In the end they will definitely produce same solution set!). So if you are normalising the pivots to 1, this will make sure that the RRE matrix for a set of equations will be unique.
+>**Intuition**: [**Double check this**] [Check Dr. Peyams video for proof after learning null spaces] Wouldn't the row echelon forms that are possible to generate from a matrix be the same except for the fact that the rows may be scaled differently (In the end they will definitely produce same solution set!). So if you are normalising the pivots to 1, this will make sure that the RRE matrix for a set of equations will be unique.
 
 The RRE matrix for an inconsistent system (no solutions) will have it's last column as a pivot column. 
 
@@ -301,3 +301,66 @@ Two straightforward properties can be stated at this moment. Assume $A$ is a mat
 
 > Definition: A ***matrix equation*** is an equation of the form $Ax=b$ where $A$ is an $m\times n$ matrix, $b$ is a vector in $\mathbb{R}^m$, and $x$ is a vector whose coefficients $x_1, x_2,\dots,x_n$ are unknown.
 
+We would be looking at two complementary questions about matrix equation $Ax=b$ in this course:
+
+1. Given a specific choice of $b$, what are all of the solutions to $Ax=b$? 
+
+2. What are all the choices of $b$ such that $Ax=b$ is consistent? 
+
+The first question is a more familiar one as it is no different than solving a linear system of equations. The second however might sound novel, but as the course progresses will reveal itself to be intimately connected to the first.
+
+With the new found knowledge of multiplication between a matrix and a vector we can now list out **four** equivalent ways of representing a system of linear equations.
+
+1. As a system of equations:
+
+$$
+\left\{
+\begin{align*}
+2x_1+3x_2-2x_3&=7 \\
+x_1-x_2-3x_3&=5
+\end{align*}
+\right.
+$$ 
+
+2. As an augmented matrix:
+
+$$
+\left[
+  \begin{matrix}
+    2 & 3 & -2 \\
+    1 & -1 & -3 \\
+  \end{matrix}
+  \left|
+    \,
+    \begin{matrix}
+      7 \\
+      5 \\
+    \end{matrix}
+  \right.
+\right]
+$$
+
+3. As a vector equation
+
+$$
+x_1\begin{pmatrix}2\\1\end{pmatrix} +
+x_2\begin{pmatrix}3\\-1\end{pmatrix} +
+x_3\begin{pmatrix}-2\\-3\end{pmatrix} =
+\begin{pmatrix}7\\5\end{pmatrix}
+$$
+
+4. As a matrix equation $(Ax=b)$:
+
+$$
+\begin{pmatrix}
+2 & 3 & -2 \\
+1 & -1 & -3
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+7 \\ 5
+\end{pmatrix}
+$$
