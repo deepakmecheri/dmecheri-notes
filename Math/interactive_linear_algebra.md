@@ -364,3 +364,24 @@ x_1 \\ x_2 \\ x_3
 7 \\ 5
 \end{pmatrix}
 $$
+
+> Note: If $A$ is an $m \times n$ vector and $x$ is an $n$ dimensional vector ie. it is in $\mathbb{R}^n$
+> $$
+> Ax = 
+> \begin{pmatrix}
+> \text{---} \ r_1 \ \text{---} \\ 
+> \text{---} \ r_2 \ \text{---} \\ 
+> \vdots \\
+> \text{---} \ r_m \ \text{---} \\ 
+> \end{pmatrix}
+> x = 
+> \begin{pmatrix}
+> r_1 x \\ 
+> r_2 x \\
+> \vdots \\
+> r_m x \\
+> \end{pmatrix}.
+> $$
+> Maybe I could further investigate and give insights on the dot product operations being done here.
+
+### 2.4 Solution Sets
