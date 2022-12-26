@@ -426,4 +426,15 @@ a= "hello"
 
 As it says. Be an adult while dealing with variables.
 
+### 4.4. Special Variable Types
+
+`local variables` variables visible only within a code block
+
+`environmental variables` variables that affect the behavior of the shell. In a more general sense each *process* has an "environment" that hold information that the process may reference. In this manner the shell is like any other process.
+
+`positional parameters` arguments passed to the script from the command line: $\$0, \$1, \$2, \$3, \dots$
+
+> Note: The `shift` command reassigns the positional parameters, in effect shifting them to the left one notch.
+
+## Chapter 5. Quoting
 
